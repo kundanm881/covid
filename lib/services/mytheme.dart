@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
+//Theme class
 class ThemeNotifier with ChangeNotifier {
   ThemeMode _themeData;
 
   ThemeNotifier(this._themeData);
 
+  //dending Theme Mode to App
   getTheme() {
     return _themeData;
   }
 
+  //get Theme Mode From App
   setTheme(ThemeMode themeMode) async {
     _themeData = themeMode;
     notifyListeners();
