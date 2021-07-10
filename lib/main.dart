@@ -11,7 +11,7 @@ void main() => runApp(ChangeNotifierProvider<ThemeNotifier>(
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _themeNotifier = Provider.of<ThemeNotifier>(context);
+    // final _themeNotifier = Provider.of<ThemeNotifier>(context);
     return Consumer<ThemeNotifier>(
       builder: (context,themeNotifier,child){
         return MaterialApp(
@@ -20,8 +20,12 @@ class MyApp extends StatelessWidget {
           themeMode: themeNotifier.getTheme(),
           home: Scaffold(
             appBar: AppBar(
-              title: Text("mandal ${themeNotifier.getTheme()}"),
+              actions: [IconButton(icon: Icon(Icons.nights_stay_outlined), onPressed: (){
+                themeNotifier.setTheme(ThemeMode.light);
+              })],
+              title: Text("mandal"),
             ),
+            body: Center(child: Text("${themeNotifier.getTheme()}"),),
           ),
         );
       },

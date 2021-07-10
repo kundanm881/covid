@@ -13,6 +13,7 @@ class ThemeNotifier with ChangeNotifier {
     _themeData = themeMode;
     notifyListeners();
   }
+
 }
 
 final darkTheme = ThemeData(
