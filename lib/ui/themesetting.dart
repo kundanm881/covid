@@ -8,6 +8,10 @@ class ThemeSetting extends StatefulWidget {
 class _ThemeSettingState extends State<ThemeSetting> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Text("Settings"),
+      ),
+    );
   }
 }
